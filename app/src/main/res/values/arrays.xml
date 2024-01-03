@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="calories_array">
+        <item>1200 kcal</item>
+        <item>1500 kcal</item>
+        <item>1800 kcal</item>
+        <!-- Dodaj tutaj więcej opcji kaloryczności -->
+    </string-array>
+</resources>

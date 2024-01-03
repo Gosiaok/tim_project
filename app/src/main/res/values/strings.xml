@@ -1,0 +1,9 @@
+<resources>
+    <!-- Inne zasoby stringów -->
+
+    <string name="additional_info">Dodatkowe informacje</string>
+    <string name="submit_order">Złóż zamówienie</string>
+    <string name="app_name">Nazwa Mojej Aplikacji</string>
+
+    <!-- Tutaj możesz dodać więcej zasobów stringów, jeśli są potrzebne -->
+</resources>
