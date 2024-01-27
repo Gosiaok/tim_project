@@ -1,9 +1,10 @@
 <resources>
     <!-- Inne zasoby stringów -->
-
     <string name="additional_info">Dodatkowe informacje</string>
     <string name="submit_order">Złóż zamówienie</string>
-    <string name="app_name">Nazwa Mojej Aplikacji</string>
+    <string name="app_name">Dieta Ananasik</string>
+    <string name="choose_calories">Wybierz kaloryczność diety:</string> <!-- Etykieta dla Spinner -->
+
 
     <!-- Tutaj możesz dodać więcej zasobów stringów, jeśli są potrzebne -->
 </resources>

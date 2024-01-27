@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aop.myapplication">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    package="com.aop.DietaAnanasik">-->
 
     <application
         android:allowBackup="true"
@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".DietPurchaseActivity"
+            android:name="com.aop.DietaAnanasik.OrderDetailsActivity"
             android:exported="false" />
-        <!-- Deklaracja SplashScreenActivity jako ekranu startowego -->
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="com.aop.DietaAnanasik.DietPurchaseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.aop.DietaAnanasik.DietDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.aop.DietaAnanasik.SplashScreenActivity"
             android:exported="true"> <!-- Dodano atrybut exported -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Deklaracja pozostałych aktywności -->
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".DietaActivity" />
-
-
-
-
-
+        <activity android:name="com.aop.DietaAnanasik.MainActivity" />
+        <activity android:name="com.aop.DietaAnanasik.LoginActivity" />
+        <activity android:name="com.aop.DietaAnanasik.RegisterActivity" />
+        <activity android:name="com.aop.DietaAnanasik.DietaActivity" />
     </application>
 
 </manifest>

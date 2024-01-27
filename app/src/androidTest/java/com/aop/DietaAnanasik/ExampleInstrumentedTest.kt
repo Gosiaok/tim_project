@@ -1,4 +1,4 @@
-package com.aop.myapplication
+package com.aop.DietaAnanasik
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

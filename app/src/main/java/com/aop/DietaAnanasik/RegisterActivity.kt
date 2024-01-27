@@ -1,5 +1,6 @@
-package com.aop.myapplication
+package com.aop.DietaAnanasik
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -21,12 +22,17 @@ class RegisterActivity : AppCompatActivity() {
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 // Tutaj dodaj logikę rejestracji (np. zapis do bazy danych, Firebase itp.)
-                Toast.makeText(this, "Rejestracja...", Toast.LENGTH_SHORT).show()
+                // Załóżmy, że rejestracja jest pomyślna
+                Toast.makeText(this, "Rejestracja pomyślna", Toast.LENGTH_SHORT).show()
 
-                // Po pomyślnej rejestracji, możesz przekierować do LoginActivity lub innego ekranu
+                // Przekierowanie do LoginActivity
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish() // Zakończenie tej aktywności, aby nie wracać do niej po naciśnięciu przycisku Wstecz
             } else {
                 Toast.makeText(this, "Proszę wprowadzić adres e-mail i hasło", Toast.LENGTH_SHORT).show()
             }
+
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.aop.myapplication
+package com.aop.DietaAnanasik
 
 import org.junit.Test
 

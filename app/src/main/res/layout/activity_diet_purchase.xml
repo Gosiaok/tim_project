@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DietPurchaseActivity">
+    android:background="@drawable/dieta_ananas"
+    android:padding="16dp">
 
     <Spinner
-        android:id="@+id/spinnerCalories"
-        android:layout_width="0dp"
+        android:id="@+id/spinnerKalorycznosc"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:entries="@array/calories_array"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/editTextAdditionalInfo"
-        android:layout_width="0dp"
+    <Spinner
+        android:id="@+id/spinnerCzasTrwania"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/additional_info"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCalories"
-        app:layout_constraintStart_toStartOf="@id/spinnerCalories"
-        app:layout_constraintEnd_toEndOf="@id/spinnerCalories" />
-
+        android:layout_below="@id/spinnerKalorycznosc"
+        android:layout_marginTop="20dp"/>
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/buttonKup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kup dietę" />
+        android:layout_below="@id/spinnerCzasTrwania"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Kup"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

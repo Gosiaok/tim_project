@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.aop.myapplication"
+    namespace = "com.aop.DietaAnanasik"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.aop.myapplication"
+        applicationId = "com.aop.DietaAnanasik"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
