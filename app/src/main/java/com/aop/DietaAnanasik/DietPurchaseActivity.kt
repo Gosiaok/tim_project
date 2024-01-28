@@ -4,36 +4,56 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
-
 
 class DietPurchaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diet_purchase)
 
-        // Przykładowe dane dla spinnerów - należy je dostosować do potrzeb aplikacji
-        val kalorycznosc = arrayOf("1200 kcal", "1500 kcal", "1800 kcal", "2000 kcal", "2500 kcal", "3000 kcal")
-        val czasTrwania = arrayOf("7 dni", "20 dni", "30 dni", "7 dni bez weekendow", "20 dni bez weekendow", "30 dni bez weekendow")
+        val dostepneDiety = arrayOf(
+            "Dieta Sportowa",
+            "Dieta Wege Low IG",
+            "Home",
+            "Dieta Tłuszczowa",
+            "Low Carb",
+            "No Fish",
+            "Kuchnia Polska"
+        )
+        val kalorycznosc = arrayOf("1500 kcal", "1800 kcal", "2000 kcal", "2500 kcal", "3000 kcal")
 
-        // Inicjalizacja spinnerów
+        val spinnerDiety: Spinner = findViewById(R.id.spinnerDiety)
         val spinnerKalorycznosc: Spinner = findViewById(R.id.spinnerKalorycznosc)
-        val spinnerCzasTrwania: Spinner = findViewById(R.id.spinnerCzasTrwania)
+        val editTextIloscDni: EditText = findViewById(R.id.editTextIloscDni)
 
-        // Ustawienie adapterów dla spinnerów
-        spinnerKalorycznosc.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, kalorycznosc)
-        spinnerCzasTrwania.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, czasTrwania)
+        spinnerDiety.adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, dostepneDiety)
+        spinnerKalorycznosc.adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, kalorycznosc)
 
-        // Inicjalizacja i obsługa przycisku "Kup"
         val buttonKup: Button = findViewById(R.id.buttonKup)
         buttonKup.setOnClickListener {
-            // Przejście do OrderDetailsActivity z wybranymi opcjami diety
+            val wybranaDieta = spinnerDiety.selectedItem.toString()
+            val wybranaKalorycznosc = spinnerKalorycznosc.selectedItem.toString()
+            val iloscDni = editTextIloscDni.text.toString()
+
             val intent = Intent(this, OrderDetailsActivity::class.java)
-            // Możesz przekazać wybrane opcje jako dodatkowe dane w intencie
-            intent.putExtra("WYBRANA_KALORYCZNOSC", spinnerKalorycznosc.selectedItem.toString())
-            intent.putExtra("WYBRANY_CZAS_TRWANIA", spinnerCzasTrwania.selectedItem.toString())
+            intent.putExtra("WYBRANA_DIETA", wybranaDieta)
+            intent.putExtra("WYBRANA_KALORYCZNOSC", wybranaKalorycznosc)
+            intent.putExtra("ILOSC_DNI", iloscDni)
             startActivity(intent)
+
+            val buttonLogout: Button = findViewById(R.id.buttonLogout)
+            buttonLogout.setOnClickListener {
+                // Tutaj logika wylogowania
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 }
+
+

@@ -6,15 +6,24 @@
     android:padding="16dp">
 
     <Spinner
-        android:id="@+id/spinnerKalorycznosc"
+        android:id="@+id/spinnerDiety"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"/>
 
     <Spinner
-        android:id="@+id/spinnerCzasTrwania"
+        android:id="@+id/spinnerKalorycznosc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerDiety"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextIloscDni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Wpisz ilość dni"
         android:layout_below="@id/spinnerKalorycznosc"
         android:layout_marginTop="20dp"/>
 
@@ -22,9 +31,18 @@
         android:id="@+id/buttonKup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerCzasTrwania"
+        android:text="Kup dietę"
+        android:layout_below="@id/editTextIloscDni"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Kup"/>
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyloguj"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
 
 </RelativeLayout>
